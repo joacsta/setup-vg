@@ -1,5 +1,5 @@
 from questionary import select
-from setup_vg.user.consts import DESCRICOES_CAMPANHAS, PRODUTOS, REDES
+from src.setup_vg.user.consts import DESCRICOES_CAMPANHAS, PRODUTOS, REDES
 
 
 def ask_produto():
@@ -22,4 +22,6 @@ def ask_descricao():
         return select(
             "selecione a descricao para a nova acao comercial:",
             DESCRICOES_CAMPANHAS,
-        )
+        ).ask()
+    descricao_usuario = input("escreva a descricao da acao comercial: ")
+    return descricao_usuario
